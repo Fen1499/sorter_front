@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NumberForm from "./components/NumberForm/NumberForm";
+import NumberSequence from "./components/NumberSequence/NumberSequence";
+import React, { useState, useEffect } from "react";
 
-function App() {
+const App = () => {
+  const [sequence, setSequence] = useState([]);
+  
+  const addToSequence = (values) => {
+      const intValues = values.map(x => parseInt(x, 10))
+      if(intValues.reduce((p, v) => p + v, 0)){
+        setSequence(sequence.concat(intValues));
+      }
+    
+  };
+
+  const sortSequence = () => {
+    console.log("sorting")
+    //Tem que criar uma nova refrence porque js é idiota
+    const arr = [].concat(sequence.sort())
+    setSequence(arr)
+  }
+
+  useEffect(() => console.log(sequence), [sequence]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Useless">
+      <NumberForm triggerEvent={addToSequence} sorter={sortSequence} />
+      <NumberSequence sequence={sequence} />
     </div>
   );
-}
+};
 
 export default App;

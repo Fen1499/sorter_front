@@ -1,0 +1,9 @@
+.Number-box {
+    background-color: #fff;
+    display: flex;
+    overflow: hidden;       
+    justify-content: center;
+    border-radius: .25rem;
+    margin: .375rem;
+
+}
