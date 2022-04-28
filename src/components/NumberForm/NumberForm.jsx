@@ -1,7 +1,7 @@
 import './NumberForm.css'
 import React, { useState } from 'react'
 
-const NumberForm = ({ triggerEvent, sorter }) => {
+const NumberForm = ({ triggerEvent, sorter, cleaner }) => {
 
   const [nb, setNb] = useState('');
   const handleNb = (ev) => {
@@ -9,7 +9,7 @@ const NumberForm = ({ triggerEvent, sorter }) => {
   }
 
   const handleRandomNb = (len) => {
-    return Array.from(Array.from({length: len}, () => Math.floor(Math.random() * 100)))
+    return Array.from(Array.from({ length: len }, () => Math.floor(Math.random() * 100)))
   }
 
   return (
@@ -39,6 +39,11 @@ const NumberForm = ({ triggerEvent, sorter }) => {
               SORT!
             </button>
           </div>
+          <div className="col col-auto">
+              <button type="button" className="btn btn-danger" onClick={() => cleaner()} >
+                CLEAR
+              </button>
+            </div>
         </div>
       </form>
     </div>
