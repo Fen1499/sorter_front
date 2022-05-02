@@ -1,5 +1,5 @@
 import "./NumberSequence.css";
-import React, { useEffect, useState, useLayoutEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import NumberBox from "../NumberBox/NumberBox";
 
 const NumberSequence = ({ sequence }) => {
@@ -16,7 +16,7 @@ const NumberSequence = ({ sequence }) => {
 
   const [sequence_chunks, setSequenceChunks] = useState([]);
   useLayoutEffect(() => createChunks(sequence, 12), [sequence]);
-  useEffect(() => console.log(sequence_chunks), [sequence_chunks]);
+  //useEffect(() => console.log(sequence_chunks), [sequence_chunks]);
 
   return (
     <div className="container Number-sequence">

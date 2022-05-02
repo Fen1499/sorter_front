@@ -2,12 +2,7 @@ const baseURL = 'http://localhost:8080/v1'
 
 class BaseAPI {
 
-  constructor() {
-    //Empty
-  }
-
-  
-  fetchSomething(path, method, body) {
+  fetchToJSON(path, method, body) {
     let abortController = new AbortController()
     setTimeout(() => abortController.abort, 2000)
     let config = {
