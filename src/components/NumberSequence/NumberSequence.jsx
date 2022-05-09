@@ -1,5 +1,5 @@
 import "./NumberSequence.css";
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import NumberBox from "../NumberBox/NumberBox";
 
 const NumberSequence = ({ sequence }) => {
