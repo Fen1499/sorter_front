@@ -23,7 +23,7 @@ const NumberTree = ({ rawTree }) => {
         <div className="Number-tree">
             {
                tree.map((smt, idx) =>     
-                <div className="container">
+                <div key={idx} className="container">
                     <TreeLevel level={smt}/>
                 </div>)
             }
